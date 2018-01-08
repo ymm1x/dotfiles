@@ -15,4 +15,4 @@ for file in ${DOT_FILES[@]}; do
   fi
 done
 
-ok "All installed!"
+ok "Complete!"
