@@ -8,7 +8,7 @@ readonly DOT_FILES=( .vimrc )
 for file in ${DOT_FILES}; do
   dest=${HOME}/${file}
   if [ -e ${dest} ]; then
-    fail "[warn] ${dest}: skipped (already exists)"
+    warn "[warn] ${dest}: skipped (already exists)"
   else
     ln -s $HOME/dotfiles/$file $dest
     ok "[ ok ] ${dest}: created"
