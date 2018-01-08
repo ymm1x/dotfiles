@@ -28,7 +28,7 @@ zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # 大文字小文字を無視して補完
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
 # 補完候補を ←↓↑→ で選択
-zstyle ':completion:*:default' menu select=1
+zstyle ':completion:*:default' menu select true
 # 補完キー連打で順に候補を選択
 unsetopt automenu
 # Shift-Tab で逆方向
