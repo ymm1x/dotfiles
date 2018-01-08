@@ -3,7 +3,7 @@ set -euo pipefail
 
 source lib/echos.sh
 
-readonly DOT_FILES=( .vimrc .bashrc )
+readonly DOT_FILES=( .vimrc .bashrc .zshrc )
 
 for file in ${DOT_FILES[@]}; do
   dest=${HOME}/${file}
