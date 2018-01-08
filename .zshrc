@@ -25,8 +25,8 @@ setopt sharehistory
 # 補完候補に色を付ける
 export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:ex=01;32:*.tar=01;31'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
-# 大文字小文字を無視して補完
-zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
+# 大文字小文字を無視して補完 (ただし入力された case type を優先する)
+zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 # 補完候補を ←↓↑→ で選択
 zstyle ':completion:*:default' menu select true
 # 補完キー連打で順に候補を選択
