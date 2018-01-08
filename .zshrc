@@ -33,10 +33,26 @@ zstyle ':completion:*:default' menu select true
 unsetopt automenu
 # Shift-Tab で逆方向
 bindkey "\e[Z" reverse-menu-complete
+# aliases
+alias dc='docker-compose'
+alias gcop='git branch -a --sort=-authordate | cut -b 3- | perl -pe '\''s#^remotes/origin/###'\'' | perl -nlE '\''say if !$c{$_}++'\'' | grep -v -- "->" | peco | xargs git checkout'
 
-# for zplug
+: "for golang" && {
+  if [ -x "`which go`" ]; then
+    export GOPATH=$HOME/.go
+    export PATH=$PATH:$GOPATH/bin
+  fi
+}
+
+: "for ruby" && {
+  if [ -x "`which rbenv`" ]; then
+    export PATH="$HOME/.rbenv/bin:$PATH" 
+    eval "$(rbenv init - zsh)"
+  fi
+}
+
 : "load zplug" && {
-  # load
+  # zplug
   source ~/.zplug/init.zsh
   zplug 'zplug/zplug', hook-build:'zplug --self-manage'
   # theme
@@ -50,49 +66,35 @@ bindkey "\e[Z" reverse-menu-complete
   bindkey '^[[B' history-substring-search-down
   # git helper
   zplug "plugins/git", from:oh-my-zsh
-  # Install plugins if there are plugins that have not been installed
+  # install plugins
   if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
       echo; zplug install
     fi
   fi
-  # Then, source plugins and add commands to $PATH
+  # source plugins and add commands to $PATH
   zplug load
 }
 
-# enable autojump
-[[ -s `brew --prefix`/etc/autojump.sh ]] && . `brew --prefix`/etc/autojump.sh
-
-# for history search
-function peco-select-history() {
-  local tac
-  if which tac > /dev/null; then
-    tac="tac"
-  else
-    tac="tail -r"
+: "enable autojump" && {
+  if [[ -s `brew --prefix`/etc/autojump.sh ]] ; then
+    . `brew --prefix`/etc/autojump.sh
   fi
-  BUFFER=$(\history -n 1 | \
-    eval $tac | \
-    peco --query "$LBUFFER")
-  CURSOR=$#BUFFER
-  zle clear-screen
 }
-zle -N peco-select-history
-bindkey '^r' peco-select-history
 
-# aliases
-alias dc='docker-compose'
-alias gcop='git branch -a --sort=-authordate | cut -b 3- | perl -pe '\''s#^remotes/origin/###'\'' | perl -nlE '\''say if !$c{$_}++'\'' | grep -v -- "->" | peco | xargs git checkout'
-
-# for golang
-if [ -x "`which go`" ]; then
-  export GOPATH=$HOME/.go
-  export PATH=$PATH:$GOPATH/bin
-fi
-
-# for ruby
-if [ -x "`which rbenv`" ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH" 
-  eval "$(rbenv init - zsh)"
-fi
+: "enable peco history search" && {
+  function peco-select-history() {
+    local tac
+    if which tac> /dev/null; then
+      tac="tac"
+    else
+      tac="tail -r"
+    fi
+    BUFFER=$(\history -n 1 | eval $tac | peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+  }
+  zle -N peco-select-history
+  bindkey '^r' peco-select-history
+}
