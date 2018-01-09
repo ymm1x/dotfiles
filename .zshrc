@@ -1,7 +1,5 @@
 # Emacs 風キーバインド
 bindkey -e
-# 文字コードの設定
-export LANG=ja_JP.UTF-8
 # 履歴ファイルのパス
 HISTFILE=~/.zsh_history
 # メモリにのせる履歴上限
@@ -23,7 +21,6 @@ setopt histignorespace
 # 複数端末で履歴を共有
 setopt sharehistory
 # 補完候補に色を付ける
-export LS_COLORS='no=00:fi=00:di=01;34:ln=01;36:pi=40;33:so=01;35:bd=40;33;01:cd=40;33;01:ex=01;32:*.tar=01;31'
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # 大文字小文字を無視して補完 (ただし入力された case type を優先する)
 zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
@@ -36,13 +33,6 @@ bindkey "\e[Z" reverse-menu-complete
 # aliases
 alias dc='docker-compose'
 alias gcop='git branch -a --sort=-authordate | cut -b 3- | perl -pe '\''s#^remotes/origin/###'\'' | perl -nlE '\''say if !$c{$_}++'\'' | grep -v -- "->" | peco | xargs git checkout'
-
-: "for golang" && {
-  if [ -x "`which go`" ]; then
-    export GOPATH=$HOME/.go
-    export PATH=$PATH:$GOPATH/bin
-  fi
-}
 
 : "for ruby" && {
   if [ -x "`which rbenv`" ]; then
@@ -97,4 +87,8 @@ alias gcop='git branch -a --sort=-authordate | cut -b 3- | perl -pe '\''s#^remot
   }
   zle -N peco-select-history
   bindkey '^r' peco-select-history
+}
+
+: "enable direnv" && {
+  eval "$(direnv hook zsh)"
 }
