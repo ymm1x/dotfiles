@@ -7,9 +7,6 @@
   bindkey \^U backward-kill-line
   # Delete
   bindkey "^[[3~" delete-char  
-  # Ctrl-W でスラッシュ単位で削除できるようにする
-  autoload -U select-word-style
-  select-word-style bash
 }
 
 : "history settings" && {
