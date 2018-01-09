@@ -74,9 +74,6 @@
   zplug "zsh-users/zsh-syntax-highlighting", defer:2
   # completions
   zplug "zsh-users/zsh-completions"
-  zplug "zsh-users/zsh-history-substring-search"
-  bindkey '^[[A' history-substring-search-up
-  bindkey '^[[B' history-substring-search-down
   # git helper
   zplug "plugins/git", from:oh-my-zsh
   # install plugins
