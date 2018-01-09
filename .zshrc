@@ -91,3 +91,9 @@ alias history='fc -l 1'
 : "enable direnv" && {
   eval "$(direnv hook zsh)"
 }
+
+: "load local .zshrc if exists" && {
+  if [ -f ~/.zshrc.local ]; then
+      source ~/.zshrc.local
+  fi
+}
