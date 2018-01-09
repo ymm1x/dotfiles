@@ -30,8 +30,12 @@ bindkey "\e[Z" reverse-menu-complete
 bindkey \^U backward-kill-line
 # aliases
 alias dc='docker-compose'
-alias gcop='git branch -a --sort=-authordate | cut -b 3- | perl -pe '\''s#^remotes/origin/###'\'' | perl -nlE '\''say if !$c{$_}++'\'' | grep -v -- "->" | peco | xargs git checkout'
 alias history='fc -l 1'
+# helper functions
+# ref. https://qiita.com/ymm1x/items/a735e82244a877ac4d23
+function gcop() {
+  git branch -a --sort=-authordate | cut -b 3- | perl -pe 's#^remotes/origin/###' | perl -nlE 'say if !$c{$_}++' | grep -v -- "->" | peco --query="$*" | xargs git checkout
+}
 
 : "for ruby" && {
   if [ -x "`which rbenv`" ]; then
