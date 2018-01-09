@@ -44,6 +44,7 @@
 : "common aliases" && {
   alias dc='docker-compose'
   alias history='fc -l 1'
+  alias vs='code'
 }
 
 : "declare helper functions" && {
