@@ -26,6 +26,8 @@ zstyle ':completion:*:default' menu select true
 unsetopt automenu
 # Shift-Tab で逆方向
 bindkey "\e[Z" reverse-menu-complete
+# Ctrl-U の挙動を bash に合わせる
+bindkey \^U backward-kill-line
 # aliases
 alias dc='docker-compose'
 alias gcop='git branch -a --sort=-authordate | cut -b 3- | perl -pe '\''s#^remotes/origin/###'\'' | perl -nlE '\''say if !$c{$_}++'\'' | grep -v -- "->" | peco | xargs git checkout'
