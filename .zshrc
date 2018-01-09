@@ -1,11 +1,5 @@
 # Emacs 風キーバインド
 bindkey -e
-# 履歴ファイルのパス
-HISTFILE=~/.zsh_history
-# メモリにのせる履歴上限
-HISTSIZE=1000
-# ファイルに保存する履歴上限
-SAVEHIST=100000
 # 履歴ファイルを上書きせず追加
 setopt append_history
 # すぐに履歴を追加
