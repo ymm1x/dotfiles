@@ -9,3 +9,6 @@ augroup vimrcEx
 augroup END
 " 画面最後の行をできる限り表示
 set display=lastline
+" シンタックスハイライトを有効にする
+set term=xterm-256color
+syntax on
