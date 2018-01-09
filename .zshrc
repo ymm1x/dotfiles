@@ -33,6 +33,7 @@ bindkey "\e[Z" reverse-menu-complete
 # aliases
 alias dc='docker-compose'
 alias gcop='git branch -a --sort=-authordate | cut -b 3- | perl -pe '\''s#^remotes/origin/###'\'' | perl -nlE '\''say if !$c{$_}++'\'' | grep -v -- "->" | peco | xargs git checkout'
+alias history='fc -l 1'
 
 : "for ruby" && {
   if [ -x "`which rbenv`" ]; then
