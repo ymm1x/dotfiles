@@ -28,6 +28,8 @@
   setopt sharehistory
   # `!*` を実行したときすぐに実行しない
   setopt hist_verify
+  # cd のときに自動で pushd する
+  setopt auto_pushd
 }
 
 : "completion settings" && {
