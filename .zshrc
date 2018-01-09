@@ -16,6 +16,8 @@ setopt histignorespace
 setopt hist_reduce_blanks
 # 複数端末で履歴を共有
 setopt sharehistory
+# `!*` を実行したときすぐに実行しない
+setopt hist_verify
 # 補完候補に色を付ける
 zstyle ':completion:*' list-colors ${(s.:.)LS_COLORS}
 # 大文字小文字を無視して補完 (ただし入力された case type を優先する)
