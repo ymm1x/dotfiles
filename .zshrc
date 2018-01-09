@@ -119,3 +119,16 @@
       source ~/.zshrc.local
   fi
 }
+
+: "overwrite lime prompt" && {
+  render_prompt() {
+    echo -n "[]"
+    echo -n ' '
+    prompt_lime_dir
+    echo -n ' '
+    prompt_lime_git
+    echo
+    echo -n "${prompt_lime_rendered_symbol}"
+  }
+  PROMPT='$(render_prompt) '
+}
