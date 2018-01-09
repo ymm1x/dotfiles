@@ -30,6 +30,8 @@ unsetopt automenu
 bindkey "\e[Z" reverse-menu-complete
 # Ctrl-U の挙動を bash に合わせる
 bindkey \^U backward-kill-line
+# Delete
+bindkey "^[[3~" delete-char  
 # aliases
 alias dc='docker-compose'
 alias history='fc -l 1'
