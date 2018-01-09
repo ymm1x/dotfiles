@@ -26,6 +26,9 @@ zstyle ':completion:*' matcher-list '' 'm:{a-z}={A-Z}' '+m:{A-Z}={a-z}'
 zstyle ':completion:*:default' menu select true
 # 補完キー連打で順に候補を選択
 unsetopt automenu
+# Ctrl-W でスラッシュ単位で削除できるようにする
+autoload -U select-word-style
+select-word-style bash
 # Shift-Tab で逆方向
 bindkey "\e[Z" reverse-menu-complete
 # Ctrl-U の挙動を bash に合わせる
