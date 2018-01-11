@@ -64,6 +64,13 @@
   fi
 }
 
+: "enable goenv" && {
+  if [ -x "`which goenv`" ]; then
+    export PATH="$HOME/.goenv/bin:$PATH"
+    eval "$(goenv init -)"
+  fi
+}
+
 : "enable zplug" && {
   # zplug
   source ~/.zplug/init.zsh
