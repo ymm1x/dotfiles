@@ -83,11 +83,15 @@
   zplug "zsh-users/zsh-completions"
   # git helper
   zplug "plugins/git", from:oh-my-zsh
+
   # install plugins
-  if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-      echo; zplug install
+  if [ ! ~/.zplug/last_zshrc_check_time -nt ~/.zshrc ]; then
+    touch ~/.zplug/last_zshrc_check_time
+    if ! zplug check --verbose; then
+      printf "Install? [y/N]: "
+      if read -q; then
+        echo; zplug install
+      fi
     fi
   fi
   # source plugins and add commands to $PATH
@@ -138,3 +142,4 @@
   }
   PROMPT='$(render_prompt) '
 }
+
