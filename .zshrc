@@ -106,6 +106,10 @@
   bindkey '^r' peco-select-history
 }
 
+: "enable anyenv" && {
+  eval "$(anyenv init -)"
+}
+
 : "enable direnv" && {
   eval "$(direnv hook zsh)"
 }
