@@ -57,20 +57,6 @@
   }
 }
 
-: "enable rbenv" && {
-  if [ -x "`which rbenv`" ]; then
-    export PATH="$HOME/.rbenv/bin:$PATH" 
-    eval "$(rbenv init - zsh)"
-  fi
-}
-
-: "enable goenv" && {
-  if [ -x "`which goenv`" ]; then
-    export PATH="$HOME/.goenv/bin:$PATH"
-    eval "$(goenv init -)"
-  fi
-}
-
 : "enable zplug" && {
   # zplug
   source ~/.zplug/init.zsh
