@@ -128,7 +128,7 @@
 
 : "overwrite lime prompt" && {
   render_prompt() {
-    echo -n "$(tput setaf 143)[]$(tput setaf 0)"
+    echo -n "%(?.$(tput setaf 6).$(tput setaf 1))[]$(tput setaf 0)"
     echo -n ' '
     prompt_lime_dir
     echo -n ' '
