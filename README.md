@@ -28,4 +28,8 @@ rbenv global 2.3.3
 anyenv install goenv
 goenv install 1.9.2
 goenv global 1.9.2
+
+anyenv install pyenv
+pyenv install 2.7.13
+pyenv global 2.7.13
 ```
