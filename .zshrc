@@ -45,8 +45,11 @@
 
 : "common aliases" && {
   alias dc='docker-compose'
-  alias history='fc -l 1'
   alias vs='code'
+  # history を全件表示
+  alias history='fc -l 1'
+  # ls をカラー表示
+  alias ls='ls -G'
 }
 
 : "declare helper functions" && {
