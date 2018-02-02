@@ -74,6 +74,8 @@
   zplug "zsh-users/zsh-completions"
   # git helper
   zplug "plugins/git", from:oh-my-zsh
+  # shell's history search
+  zplug "zsh-users/zsh-history-substring-search"
 
   # install plugins
   if [ ! ~/.zplug/last_zshrc_check_time -nt ~/.zshrc ]; then
@@ -85,6 +87,13 @@
       fi
     fi
   fi
+
+  # assign key of zsh-history-substring-searchassign
+  if zplug check "zsh-users/zsh-history-substring-search"; then
+    bindkey '^[[A' history-substring-search-up
+    bindkey '^[[B' history-substring-search-down
+  fi
+
   # source plugins and add commands to $PATH
   zplug load
 }
