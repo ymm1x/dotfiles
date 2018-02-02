@@ -30,6 +30,8 @@
   setopt hist_verify
   # cd のときに自動で pushd する
   setopt auto_pushd
+  # コマンドライン実行時にもコメント (#) を有効にする
+  setopt interactivecomments
 }
 
 : "completion settings" && {
