@@ -27,7 +27,7 @@ export PATH="$HOME/.anyenv/bin:$PATH"
 # for npm
 if which npm> /dev/null; then
   export PATH="`npm bin -g`:$PATH"
-else
+fi
 
 # for golang
 export GOPATH="$HOME/.go"
