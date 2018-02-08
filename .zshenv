@@ -30,8 +30,6 @@ if which npm> /dev/null; then
 fi
 
 # for golang
-export GOPATH="$HOME/.go"
-export PATH="$PATH:$GOPATH/bin"
 
 : "load local .zshenv setting if exists" && {
   if [ -f ~/.zshenv.local ]; then

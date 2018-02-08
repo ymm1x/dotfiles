@@ -122,6 +122,11 @@
 
 : "enable anyenv" && {
   eval "$(anyenv init -)"
+  if which goenv> /dev/null; then
+    export GOROOT="$HOME/.anyenv/envs/goenv/versions/$(goenv global)"
+    export GOPATH="$HOME/.go"
+    export PATH="$PATH:$GOPATH/bin"
+  fi
 }
 
 : "enable direnv" && {
