@@ -45,15 +45,6 @@
   unsetopt automenu
 }
 
-: "common aliases" && {
-  alias dc='docker-compose'
-  alias vs='code'
-  # history を全件表示
-  alias history='fc -l 1'
-  # ls をカラー表示
-  alias ls='ls -G'
-}
-
 : "declare helper functions" && {
   # ブランチ切り替え補助
   # ref. https://qiita.com/ymm1x/items/a735e82244a877ac4d23
@@ -96,6 +87,15 @@
 
   # source plugins and add commands to $PATH
   zplug load
+}
+
+: "common aliases" && {
+  alias dc='docker-compose'
+  alias vs='code'
+  # history を全件表示
+  alias history='fc -l 1'
+  # ls をカラー表示
+  alias ls='ls -G'
 }
 
 : "enable autojump" && {
