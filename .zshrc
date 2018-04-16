@@ -92,7 +92,6 @@
 : "common aliases" && {
   alias dc='docker-compose'
   alias vs='code'
-  alias gp='git push && git rev-parse HEAD'
   # history を全件表示
   alias history='fc -l 1'
   # ls をカラー表示
