@@ -96,6 +96,8 @@
   alias history='fc -l 1'
   # ls をカラー表示
   alias ls='ls -G'
+  # シェルの設定を再読み込み
+  alias reload='exec $SHELL -l'
 }
 
 : "enable autojump" && {
