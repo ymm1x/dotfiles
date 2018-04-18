@@ -12,7 +12,7 @@ export GIT_EDITOR="${EDITOR}"
 
 # history
 HISTFILE=~/.zsh_history
-HISTSIZE=1000
+HISTSIZE=3000
 SAVEHIST=100000
 
 # pushd
