@@ -1,3 +1,7 @@
+function command_exists() {
+  type "$1" &> /dev/null ;
+}
+
 : "bindkey settings" && {
   # Emacs 風キーバインド
   bindkey -e
@@ -104,6 +108,10 @@
   alias ls='ls -G'
   # シェルの設定を再読み込み
   alias reload='exec $SHELL -l'
+  # diff をカラー表示
+  if command_exists colordiff; then
+    alias diff='colordiff'
+  fi
 }
 
 : "enable autojump" && {

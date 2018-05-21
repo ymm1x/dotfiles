@@ -29,7 +29,7 @@ function command_exists() {
 }
 
 : "install other packages by brew" && {
-  packages=( peco ghq jq tree wget autojump direnv )
+  packages=( peco ghq jq tree wget autojump direnv colordiff )
   for package in ${packages[@]}; do
     if ! brew list | grep $package &> /dev/null; then
       info "installing ${package}..."
