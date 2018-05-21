@@ -49,7 +49,13 @@
   # ブランチ切り替え補助
   # ref. https://qiita.com/ymm1x/items/a735e82244a877ac4d23
   function gcop() {
-    git branch -a --sort=-authordate | cut -b 3- | perl -pe 's#^remotes/origin/###' | perl -nlE 'say if !$c{$_}++' | grep -v -- "->" | peco --initial-filter Regexp --query="$*" | xargs git checkout
+    git branch -a --sort=-authordate |
+      cut -b 3- |
+      perl -pe 's#^remotes/origin/###' |
+      perl -nlE 'say if !$c{$_}++' |
+      grep -v -- "->" |
+      peco --initial-filter Regexp --query="$*" |
+      xargs git checkout
   }
 }
 
