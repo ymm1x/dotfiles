@@ -3,6 +3,7 @@
   # ref. https://github.com/Bash-it/bash-it/blob/master/aliases/available/git.aliases.bash
   alias gcl='git clone'
   alias ga='git add'
+  alias gaa='git add --all'
   alias grm='git rm'
   alias gap='git add -p'
   alias gall='git add -A'
