@@ -54,10 +54,10 @@ function command_exists() {
   # ref. https://qiita.com/ymm1x/items/a735e82244a877ac4d23
   function gcop() {
     git branch -a --sort=-authordate |
-      cut -b 3- |
+      grep -v -e '->' -e '*' |
+      perl -pe 's/^\h+//g' |
       perl -pe 's#^remotes/origin/###' |
-      perl -nlE 'say if !$c{$_}++' |
-      grep -v -- "->" |
+      perl -nle 'print if !$c{$_}++' |
       peco --initial-filter Regexp --query="$*" |
       xargs git checkout
   }
