@@ -159,16 +159,16 @@ function command_exists() {
   render_prompt() {
     LIME_DIR_COLOR=110
     LIME_GIT_COLOR=248
-    echo -n "%(?.$(tput setaf 110).$(tput setaf 124))[]$(tput setaf 0)"
+    echo -n "%(?.$(tput setaf 110).$(tput setaf 124))[]$(tput sgr0)"
     echo -n ' '
     prompt_lime_dir
     echo -n ' '
     prompt_lime_git
     echo -n "$(tput setaf 246)"
     echo -n "@$(date '+%H:%M')"
-    echo -n "$(tput setaf 0)"
     echo
     echo -n "${prompt_lime_rendered_symbol}"
+    echo -n "$(tput sgr0)"
   }
   PROMPT='$(render_prompt) '
 }
