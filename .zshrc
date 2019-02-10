@@ -168,7 +168,6 @@ function command_exists() {
     echo -n "@$(date '+%H:%M')"
     echo
     echo -n "${prompt_lime_rendered_symbol}"
-    echo -n "$(tput sgr0)"
   }
   PROMPT='$(render_prompt) '
 }
