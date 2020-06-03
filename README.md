@@ -26,15 +26,14 @@ rbenv install 2.3.3
 rbenv global 2.3.3
 
 anyenv install goenv
-goenv install 1.9.2
-goenv global 1.9.2
+goenv install 1.11.1
+goenv global 1.11.1
 
 anyenv install pyenv
-pyenv install 2.7.13
-pyenv global 2.7.13
+pyenv install 3.8.1
+pyenv global 3.8.1
 
 anyenv install nodenv
-nodenv install 6.10.3
-nodenv global 6.10.3
+nodenv install 11.15.0
+nodenv global 11.15.0
 ```
-
