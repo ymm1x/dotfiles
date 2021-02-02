@@ -36,6 +36,14 @@ function command_exists() {
   setopt auto_pushd
   # コマンドライン実行時にもコメント (#) を有効にする
   setopt interactivecomments
+
+  # Workaround: https://qiita.com/entertvl/items/1cf56c8b02515377adda
+  # history の保存先
+  HISTFILE=~/.zsh_history
+  # メモリに保持する履歴の最大件数
+  HISTSIZE=3000
+  # ファイルに保持する履歴の最大件数
+  SAVEHIST=100000
 }
 
 : "completion settings" && {

@@ -10,11 +10,6 @@ export CVSEDITOR="${EDITOR}"
 export SVN_EDITOR="${EDITOR}"
 export GIT_EDITOR="${EDITOR}"
 
-# history
-HISTFILE=~/.zsh_history
-HISTSIZE=3000
-SAVEHIST=100000
-
 # pushd
 DIRSTACKSIZE=15
 
