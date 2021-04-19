@@ -64,7 +64,7 @@ function command_exists() {
     git branch -a --sort=-authordate |
       grep -v -e '->' -e '*' |
       perl -pe 's/^\h+//g' |
-      perl -pe 's#^remotes/origin/###' |
+      perl -pe 's#^remotes/origin/##' |
       perl -nle 'print if !$c{$_}++' |
       peco --initial-filter Regexp --query="$*" |
       xargs git checkout
