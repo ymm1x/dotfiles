@@ -41,7 +41,7 @@ function command_exists() {
   # history の保存先
   HISTFILE=~/.zsh_history
   # メモリに保持する履歴の最大件数
-  HISTSIZE=3000
+  HISTSIZE=10000
   # ファイルに保持する履歴の最大件数
   SAVEHIST=100000
 }
