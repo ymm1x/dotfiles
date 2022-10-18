@@ -39,10 +39,4 @@ function command_exists() {
   fi
 }
 
-: "install anyenv" && {
-  if [ ! -e $HOME/.anyenv ]; then
-    git clone https://github.com/riywo/anyenv ~/.anyenv
-  fi
-}
-
 ok "Complete!"
