@@ -2,6 +2,10 @@ function command_exists() {
   type "$1" &> /dev/null ;
 }
 
+: "enable brew" && {
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+}
+
 : "bindkey settings" && {
   # Emacs 風キーバインド
   bindkey -e
