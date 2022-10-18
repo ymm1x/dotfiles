@@ -16,18 +16,6 @@ function command_exists() {
   fi
 }
 
-: "install zsh by brew" && {
-  BREW_ZSH_PATH="/usr/local/bin/zsh"
-  if ! brew list | grep zsh &> /dev/null; then
-    info "installing zsh..."
-    brew install zsh zsh-completions
-    sudo sh -c 'echo $(brew --prefix)/bin/zsh >> /etc/shells'
-    chsh -s $(brew --prefix)/bin/zsh
-  else
-    warn "zsh is already installed"
-  fi
-}
-
 : "install other packages by brew" && {
   packages=( peco ghq jq tree wget autojump direnv colordiff \
     coreutils diffutils findutils )
