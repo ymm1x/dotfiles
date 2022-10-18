@@ -6,6 +6,10 @@ function command_exists() {
   eval "$(/opt/homebrew/bin/brew shellenv)"
 }
 
+: "enable asdf" && {
+  . /opt/homebrew/opt/asdf/libexec/asdf.sh
+}
+
 : "bindkey settings" && {
   # Emacs 風キーバインド
   bindkey -e

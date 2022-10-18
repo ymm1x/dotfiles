@@ -17,3 +17,16 @@ cd ~/dotfiles
 git pull
 ./deploy.sh
 ```
+
+## asdf setup (optional)
+
+```sh
+# Ruby
+asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
+asdf install ruby 2.5.9
+asdf global ruby 2.5.9
+
+# Go
+# Python
+# Node.js
+```
