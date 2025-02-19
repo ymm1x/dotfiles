@@ -27,6 +27,17 @@ function command_exists() {
   fi
 }
 
+: "install sleepwatcher" && {
+  package="sleepwatcher"
+  if ! brew list | grep "$package" &> /dev/null; then
+    info "installing ${package}..."
+    brew install "${package}"
+    brew services start "${package}"
+  else
+    warn "${package} is already installed"
+  fi
+}
+
 : "install other packages by brew" && {
   packages=( peco ghq jq tree wget autojump direnv colordiff \
     coreutils diffutils findutils asdf )
