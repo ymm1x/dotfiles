@@ -89,8 +89,6 @@ function command_exists() {
   zplug "zsh-users/zsh-syntax-highlighting", defer:2
   # completions
   zplug "zsh-users/zsh-completions"
-  # git helper
-  zplug "plugins/git", from:oh-my-zsh
   # shell's history search
   zplug "zsh-users/zsh-history-substring-search"
 
