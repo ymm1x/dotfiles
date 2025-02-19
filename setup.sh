@@ -11,8 +11,32 @@ function command_exists() {
   if ! command_exists brew; then
     info "installing brew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> "${HOME}/.zprofile"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   else
     warn "brew is already installed"
+  fi
+}
+
+: "install qlmarkdown" && {
+  package="qlmarkdown"
+  if ! brew list | grep "$package" &> /dev/null; then
+    info "installing ${package}..."
+    brew install "${package}"
+    xattr -r -d com.apple.quarantine "/Applications/QLMarkdown.app"
+  else
+    warn "${package} is already installed"
+  fi
+}
+
+: "install sleepwatcher" && {
+  package="sleepwatcher"
+  if ! brew list | grep "$package" &> /dev/null; then
+    info "installing ${package}..."
+    brew install "${package}"
+    brew services start "${package}"
+  else
+    warn "${package} is already installed"
   fi
 }
 
@@ -20,9 +44,9 @@ function command_exists() {
   packages=( peco ghq jq tree wget autojump direnv colordiff \
     coreutils diffutils findutils asdf )
   for package in ${packages[@]}; do
-    if ! brew list | grep $package &> /dev/null; then
+    if ! brew list | grep "$package" &> /dev/null; then
       info "installing ${package}..."
-      brew install ${package}
+      brew install "${package}"
     else
       warn "${package} is already installed"
     fi

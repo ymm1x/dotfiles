@@ -27,6 +27,10 @@ asdf install ruby 2.5.9
 asdf global ruby 2.5.9
 
 # Go
+asdf plugin add golang https://github.com/kennyp/asdf-golang.git
+asdf install golang 1.20.12
+asdf global golang 1.20.12
+
 # Python
 # Node.js
 ```
