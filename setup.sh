@@ -11,6 +11,8 @@ function command_exists() {
   if ! command_exists brew; then
     info "installing brew..."
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+    (echo; echo 'eval "$(/opt/homebrew/bin/brew shellenv)"') >> "${HOME}/.zprofile"
+    eval "$(/opt/homebrew/bin/brew shellenv)"
   else
     warn "brew is already installed"
   fi
