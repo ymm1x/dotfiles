@@ -42,9 +42,9 @@ function command_exists() {
   packages=( peco ghq jq tree wget autojump direnv colordiff \
     coreutils diffutils findutils asdf )
   for package in ${packages[@]}; do
-    if ! brew list | grep $package &> /dev/null; then
+    if ! brew list | grep "$package" &> /dev/null; then
       info "installing ${package}..."
-      brew install ${package}
+      brew install "${package}"
     else
       warn "${package} is already installed"
     fi
