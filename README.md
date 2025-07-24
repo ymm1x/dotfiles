@@ -24,12 +24,12 @@ git pull
 # Ruby
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
 asdf install ruby 3.4.5
-asdf global ruby 3.4.5
+asdf set -u ruby 3.4.5
 
 # Go
 asdf plugin add golang https://github.com/kennyp/asdf-golang.git
 asdf install golang 1.20.12
-asdf global golang 1.20.12
+asdf set -u golang 1.20.12
 
 # Python
 # Node.js
