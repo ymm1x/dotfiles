@@ -23,8 +23,8 @@ git pull
 ```sh
 # Ruby
 asdf plugin add ruby https://github.com/asdf-vm/asdf-ruby.git
-asdf install ruby 2.5.9
-asdf global ruby 2.5.9
+asdf install ruby 3.4.5
+asdf global ruby 3.4.5
 
 # Go
 asdf plugin add golang https://github.com/kennyp/asdf-golang.git
