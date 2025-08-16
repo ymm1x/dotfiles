@@ -31,6 +31,8 @@ asdf plugin add golang https://github.com/kennyp/asdf-golang.git
 asdf install golang 1.20.12
 asdf set -u golang 1.20.12
 
-# Python
 # Node.js
+asdf plugin add nodejs
+asdf install nodejs 22.18.0
+asdf set -u nodejs 22.18.0
 ```
